@@ -3,7 +3,7 @@ import CerrarBtn from "../../img/cerrar.svg";
 import Mensaje from "../Mensaje/Mensaje";
 
 const Modal = ({ setModal, animarModal, setAnimarModal, guardarGastos }) => {
-  const [mensaje, setMensaje] = useState('');
+  const [mensaje, setMensaje] = useState("");
   const [formValues, setFormValues] = useState({
     nombre: "",
     cantidad: 0,
@@ -24,9 +24,9 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGastos }) => {
     e.preventDefault();
 
     if ([nombre, cantidad, categoria].includes("")) {
-      setMensaje('Todos los campos son obligatorios');
+      setMensaje("Todos los campos son obligatorios");
       setTimeout(() => {
-        setMensaje('')
+        setMensaje("");
       }, 2000);
       return;
     }
