@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { formatearCantidad } from "../../helpers/formatearCantidad";
 
 const ControlPresupuesto = ({ presupuesto, gastos }) => {
@@ -6,11 +7,14 @@ const ControlPresupuesto = ({ presupuesto, gastos }) => {
   const [gastado, setGastado] = useState(0);
 
   useEffect(() => {
-    const totalGastado = gastos.reduce((total, gasto) => gasto.cantidad + total, 0);
+    const totalGastado = gastos.reduce(
+      (total, gasto) => gasto.cantidad + total,
+      0
+    );
     const totalDisponible = presupuesto - totalGastado;
 
-    setDisponible(totalDisponible)
-    setGastado(totalGastado)
+    setDisponible(totalDisponible);
+    setGastado(totalGastado);
   }, [gastos]);
 
   return (
