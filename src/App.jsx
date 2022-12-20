@@ -39,6 +39,7 @@ function App() {
         gastoState.id === gasto.id ? gasto : gastoState
       );
       setGastos(gastosActualizados);
+      setGastoEditar({})
     } else {
       setGastos([...gastos, { id: uuidv4(), fecha: Date.now(), ...gasto }]);
     }
@@ -88,6 +89,7 @@ function App() {
           setAnimarModal={setAnimarModal}
           guardarGastos={guardarGastos}
           gastoEditar={gastoEditar}
+          setGastoEditar={setGastoEditar}
         />
       ) : null}
     </div>
